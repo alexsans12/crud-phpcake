@@ -61,7 +61,6 @@ class ArticlesController extends AppController
             ->findBySlug($slug)
             ->contain('Tags')
             ->firstOrFail();
-
         $this->Authorization->authorize($article);
 
         if ($this->request->is(['post', 'put'])) {
